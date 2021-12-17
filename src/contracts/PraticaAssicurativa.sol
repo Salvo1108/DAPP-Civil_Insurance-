@@ -52,6 +52,7 @@ contract PraticaAssicurativa {
         emit  creazionePratica(_newpratica.ID, _nomeIncidente, _data, _comandoPoliziaMunicipale, _costo);
     }
 
+
     // funzione per firmare la pratica
     function firmaPratica(uint256 _ID) signOnly public {
         Pratica storage pratica = _pratiche[_ID];
