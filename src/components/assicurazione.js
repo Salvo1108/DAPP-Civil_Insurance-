@@ -3,6 +3,8 @@ import Web3 from 'web3';
 import PraticaAssicurativa from "../abis/PraticaAssicurativa.json"
 
  export default class Assicurazione extends React.Component{
+
+
   async componentWillMount() {
     await this.loadWeb3()
     await this.loadBlockchainData()
@@ -37,10 +39,6 @@ import PraticaAssicurativa from "../abis/PraticaAssicurativa.json"
   }
 
 
-  visualizzaPratiche() {
-    return this.state.praticaAssicurativa.methods._pratiche;
-  }
-
    render(){
      return(
 
@@ -60,19 +58,6 @@ import PraticaAssicurativa from "../abis/PraticaAssicurativa.json"
                   <th>Contatore di Firma</th>
                 </tr>
              </thead>
-             <tbody>
-            { this.state.praticaAssicurativa.methods._pratiche.map((product, key) => {
-              return(
-                <tr key={key}>
-                  <td>{product.ID}</td>
-                  <td>{product.nomeIncidente}</td>
-                  <td>{product.data}</td>
-                  <td>{product.comandoPoliziaMunicipale}</td>
-                  <td>{product.costo}</td>
-                </tr>
-              )
-            })}
-          </tbody>
           </table>
          </div>
        </div>
